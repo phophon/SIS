@@ -1,18 +1,30 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
 datasource DS {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = env("BINARY_TARGET")
+model student {
+  addressstatus    String?
+  airtableid       String? @default("NULL")
+  canvasid         String? @default("NULL")
+  emergencycontact String? @default("NULL")
+  firstname        String? @default("NULL")
+  gender           gen?
+  lastname         String? @default("NULL")
+  phonenumber      String? @default("NULL")
+  photo            String? @default("NULL")
+  primaryemail     String? @default("NULL")
+  region           String? @default("NULL")
+  secondaryemail   String? @default("NULL")
+  uuid             Int     @id
 }
 
-// Define your own datamodels here and run `yarn redwood db save` to create
-// migrations for them.
-// TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+enum gen {
+  female
+  male
 }

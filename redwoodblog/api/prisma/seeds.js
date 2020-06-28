@@ -16,7 +16,9 @@ async function main() {
   //     await db.user.create({ data: { name: 'Admin', email: 'admin@email.com' }})
   //   }
 
-  console.info('No data to seed. See api/prisma/seeds.js for info.')
+  const programQ = await db.program.findMany()
+
+  console.log(programQ)
 }
 
 main()
