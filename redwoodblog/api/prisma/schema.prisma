@@ -20,7 +20,7 @@ model student {
   primaryemail     String @default("NULL")
   region           String @default("NULL")
   secondaryemail   String @default("NULL")
-  uuid             Int     @id
+  uuid             Int    @id
 }
 
 enum gen {

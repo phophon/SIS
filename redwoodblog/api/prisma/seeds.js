@@ -16,7 +16,7 @@ async function main() {
   //     await db.user.create({ data: { name: 'Admin', email: 'admin@email.com' }})
   //   }
 
-  const programQ = await db.student.findMany()
+  const programQ = await db.student.findMany({})
 
   console.log(programQ)
 }
